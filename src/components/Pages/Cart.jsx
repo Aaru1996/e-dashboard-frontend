@@ -152,9 +152,11 @@ const Cart = () => {
           ? `There ${count === 1 ? "is" : "are"} ${count} items in the Cart`
           : "Your cart is empty"}
       </Heading>
-     {  data.length === 0 && loading && <div className={styles.loading}>
-       <Spinner size="xl" />
-      </div>}
+      {data.length === 0 && loading && (
+        <div className={styles.loading}>
+          <Spinner size="xl" />
+        </div>
+      )}
 
       {data?.map((e) => (
         <div key={e._id} className={styles.container}>

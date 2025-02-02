@@ -40,7 +40,7 @@ const ProductList = () => {
   let localFilter = JSON.parse(localStorage.getItem("filter"));
   const { isOpen, onOpen, onClose } = useDisclosure();
   const toast = useToast();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const getProducts = async () => {
     setLoading(true);
@@ -131,10 +131,9 @@ const ProductList = () => {
   // pagination
   const tolatPage = Math.ceil(dataCount / limit);
 
-  const handleDiv = (id)=>{
-       
-    navigate(`/${id}`)
-  }
+  const handleDiv = (id) => {
+    navigate(`/${id}`);
+  };
 
   useEffect(() => {
     getProducts();
@@ -277,7 +276,11 @@ const ProductList = () => {
 
           <div className={styles.productMap}>
             {products?.map((e) => (
-              <div key={e._id} className={styles.productMap2} onClick={()=>handleDiv(e._id)}>
+              <div
+                key={e._id}
+                className={styles.productMap2}
+                onClick={() => handleDiv(e._id)}
+              >
                 <div className={styles.productImage}>
                   <div>
                     <img src={e.image} alt={e.name} />
@@ -343,12 +346,12 @@ const ProductList = () => {
         ))}
       </div> */}
 
-<div className={styles.loading}>
-            {products.length === 0 && !loading && (
-              <Heading textAlign={"center"}>No Products Found</Heading>
-            )}
-            {products.length === 0 && loading && <Spinner size="xl" />}
-          </div>
+    { products.length===0 && (<div className={styles.loading}>
+        {products.length === 0 && !loading && (
+          <Heading textAlign={"center"}>No Products Found</Heading>
+        )}
+        {products.length === 0 && loading && <Spinner size="xl" />}
+      </div>)}
     </div>
   );
 };
