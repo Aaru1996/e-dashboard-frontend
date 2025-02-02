@@ -1,0 +1,75 @@
+.container{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+.container>.image{
+    /* border: 1px solid red; */
+    margin: 2%;
+}
+.container>.image img{
+    width:500px ;
+    height: 500px;
+}
+.buttonParent{
+      display: flex;
+      height: 500px;
+      width: 300px;
+      /* border: 1px solid red; */
+      flex-direction: column;
+      justify-content: space-evenly;
+      box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+      align-items: center;
+}
+.buttonParent>div{
+     margin:  5% 10%;
+     /* border: 1px solid red; */
+}
+.button{
+    display: block;
+}
+.button button{
+    /* background-color: #FF9F00; */
+  /* border: none; */
+  /* border-radius: 5px; */
+  width: 200px;
+  min-width: 100px;
+  height: 50px;
+  font-weight: bold;
+  /* margin-right: 5px; */
+  cursor: pointer;
+  margin-bottom: 20px;
+  color: white;
+  /* font-size: 12px; */
+}
+.button .addToCart{
+    background-color: #FF9F00;
+}
+.button .delete{
+    background-color: tomato;
+}
+.button .update{
+    background-color: #2874F0;
+}
+
+@media (max-width : 480px){
+      .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* border:1px solid red */
+      }
+      .container>.image img{
+        width:250px ;
+        height: 300px;
+    }
+    .buttonParent{
+        height: 300px;
+        width: 300px;
+       
+  }
+  
+}

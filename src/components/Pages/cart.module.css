@@ -1,0 +1,100 @@
+.container{
+    display: flex;
+    /* width: 50%; */
+    /* height: 100vh; */
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px; */
+    /* border: 1px solid red; */
+    margin: 1%;
+}
+.container>div{
+    /* box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px; */
+    margin: 1%;
+    text-align: center;
+}
+.container>.image{
+    /* border: 1px solid red; */
+    /* margin: 2%; */
+}
+.container>.image img{
+    width:200px ;
+    height: 200px;
+}
+.buttonParent{
+      display: flex;
+      height: 200px;
+      width: 300px;
+      /* border: 1px solid red; */
+      flex-direction: column;
+      justify-content: space-evenly;
+      box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+      align-items: center;
+}
+.buttonParent>div{
+     margin:  3% 10%;
+     /* border: 1px solid red; */
+}
+.button{
+    display: block;
+}
+.button button{
+    /* background-color: #FF9F00; */
+  /* border: none; */
+  /* border-radius: 5px; */
+  width: 200px;
+  min-width: 100px;
+  height: 50px;
+  font-weight: bold;
+  /* margin-right: 5px; */
+  cursor: pointer;
+  margin-bottom: 20px;
+  color: white;
+  /* font-size: 12px; */
+}
+.button .addToCart{
+    background-color: #FF9F00;
+}
+.button .delete{
+    background-color: tomato;
+}
+.order{
+    background-color: #2874F0;
+    color: white;
+    margin-bottom: 4%;
+}
+.checkout{
+    text-align: center;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    /* width: 50%; */
+    /* margin-bottom: 10%; */
+}
+.loading{
+    /* text-align: center; */
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid red; */
+ 
+ }
+@media (max-width : 480px){
+    .container{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      /* border:1px solid red */
+    }
+    .container>.image img{
+      width:250px ;
+      height: 300px;
+  }
+  .buttonParent{
+      height: 200px;
+      width: 300px;
+     
+}
+
+}
