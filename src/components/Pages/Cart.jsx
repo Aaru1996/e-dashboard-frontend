@@ -31,6 +31,7 @@ const Cart = () => {
       }, 0);
     setTotalPrice(totalPrice);
 
+    if(result && result.data)
     setData(result.data);
     setCount(result.dataCount);
 

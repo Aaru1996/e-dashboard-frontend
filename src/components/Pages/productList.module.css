@@ -250,6 +250,14 @@
       display: flex;
       justify-content: space-between;
   }
+  .pagination{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    margin-top: 20px;
+    margin-left: 0%;
+    margin-bottom: 20px;
+  }
 }
 
 /* pagination */
@@ -259,7 +267,7 @@
   /* align-items: center; */
   margin-top: 20px;
   margin-left: 15%;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .pagination > .paginationInactive {
   color: #2874F0;
@@ -284,7 +292,7 @@
 /* loading */
 .loading{
    /* text-align: center; */
-   height: 70vh;
+   height: 100vh;
    display: flex;
    flex-direction: column;
    align-items: center;
