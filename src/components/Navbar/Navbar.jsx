@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./navbar.module.css";
 import {
@@ -18,12 +18,15 @@ import {
   Image,
   useToast,
 } from "@chakra-ui/react";
+import { CartContext } from "../contextApi/CartContext";
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
   const navigate = useNavigate();
   const toast = useToast();
+  const {count,setCount}  = useContext(CartContext)
+  
   let data = JSON.parse(localStorage.getItem("user")) || [];
   let cartItem = localStorage.getItem('cartItem') || 0
   const handleLogout = () => {
@@ -62,7 +65,8 @@ const Navbar = () => {
             <Link to="/add">Add Product</Link>
           </div>
           <div>
-            <Link to="/cart">Cart <span className={styles.cartItem}>{cartItem !=0 ? cartItem : ""}</span></Link>
+            <Link to="/cart">Cart </Link>
+            <span className={styles.cartItem}>{count !==0 ? count : ""}</span>
           </div>
           {data && data.name ? (
             <div>
@@ -130,6 +134,7 @@ const Navbar = () => {
                     </Link>
                     <div onClick={onClose}>
                       <Link to="/cart">Cart</Link>
+                      <span className={styles.cartItem}>{count !==0 ? count : ""}</span>
                     </div>
                   </div>
                   {data && data.name ? (

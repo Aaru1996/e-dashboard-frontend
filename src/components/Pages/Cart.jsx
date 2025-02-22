@@ -1,16 +1,19 @@
 import { Button, Heading, Spinner, useToast } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "./cart.module.css";
+import { CartContext } from "../contextApi/CartContext";
 
 const Cart = () => {
   const user = JSON.parse(localStorage.getItem("user"));
   const token = JSON.parse(localStorage.getItem("token"));
   // const cartData = JSON.parse(localStorage.getItem("cartData")) || [];
   const [data, setData] = useState([]);
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
   const toast = useToast();
   const [loading, setLoading] = useState(false);
+  const {count, setCount} = useContext(CartContext)
+  console.log(count)
 
   const getData = async () => {
     setLoading(true);
