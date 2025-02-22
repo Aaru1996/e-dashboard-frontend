@@ -28,11 +28,11 @@ const Navbar = () => {
   const {count,setCount}  = useContext(CartContext)
   
   let data = JSON.parse(localStorage.getItem("user")) || [];
-  let cartItem = localStorage.getItem('cartItem') || 0
+  // let cartItem = localStorage.getItem('cartItem') || 0
   const handleLogout = () => {
     localStorage.removeItem("user");
     localStorage.removeItem("token");
-    localStorage.removeItem("cartItem")
+    // localStorage.removeItem("cartItem")
     // toast message
     toast({
       title: "Logged out",

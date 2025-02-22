@@ -25,7 +25,7 @@ const Cart = () => {
     );
     result = await result.json();
     setLoading(false);
-    console.log(result);
+    // console.log(result);
 
     let totalPrice =
       result &&
@@ -34,13 +34,18 @@ const Cart = () => {
       }, 0);
     setTotalPrice(totalPrice);
 
-    if(result && result.data)
+    if(result && result.data){
     setData(result.data);
-    setCount(result.dataCount);
+    setCount(result.dataCount)
+    }
+    else{
+       setCount(0)
+       setData([])
+    }
 
-    if (result && result.dataCount)
-      localStorage.setItem("cartItem", result.dataCount);
-    else localStorage.setItem("cartItem", 0);
+    // if (result && result.dataCount)
+    //   localStorage.setItem("cartItem", result.dataCount);
+    // else localStorage.setItem("cartItem", 0);
   };
 
   const handleInc = async (id) => {
@@ -196,7 +201,7 @@ const Cart = () => {
         </div>
       ))}
 
-      {count >= 0 && (
+      {count > 0 && (
         <div className={styles.checkout}>
           <p>
             TotalPrice: <strong>₹{totalPrice}</strong>
